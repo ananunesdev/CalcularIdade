@@ -7,7 +7,15 @@
     <title>Calcular Idade</title>
 </head>
 <body>
-    
+    <div class="container">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="data_nascimento" class="form-label">Digite sua data de nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular Idade</button>
+        </form>
+    </div>
 
 
 
