@@ -9,11 +9,12 @@
 <body>
     <div class="container">
         <form action="" method="post">
-            <div class="mb-3">
+            <div class="form-group mb-2">
+            <label for="data_nascimento" class="form-label">Calculador de Idade</label><br>
                 <label for="data_nascimento" class="form-label">Digite sua data de nascimento:</label>
                 <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Calcular Idade</button>
+            <button type="submit" class="btn btn-info">Calcular Idade</button>
         </form>
     </div>
 
