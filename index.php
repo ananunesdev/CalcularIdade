@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="POST">
+        <form action="" method="post">
             <div class="mb-3">
                 <label for="data_nascimento" class="form-label">Digite sua data de nascimento:</label>
                 <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
@@ -16,6 +16,29 @@
             <button type="submit" class="btn btn-primary">Calcular Idade</button>
         </form>
     </div>
+
+    <?php 
+        if($_SERVER['REQUEST_METHOD']== 'POST'){
+            //Verificar se a data foi enviada
+            if(!empty($_POST['data_nascimento'])){
+                $dataNascimento = trim($_POST['data_nascimento']);
+                $dataAtual = new DateTime();
+                $dataNascimentoObj = new DateTime($dataNascimento);
+
+                //Calcular a diferença entre elas
+                $idade = $dataAtual -> diff($dataNascimentoObj) -> y;
+                $meses = $dataAtual -> diff($dataNascimentoObj) -> m;
+                $dias = $dataAtual -> diff($dataNascimentoObj) -> d;
+                $horas = $dataAtual -> diff($dataNascimentoObj) -> h;
+                $minutos = $dataAtual -> diff($dataNascimentoObj) -> i;
+
+                echo "<h4>Sua idade: $idade anos, $meses meses, $dias dias, $horas horas e $minutos minutos.</h4>";
+
+            }
+        }else{
+            echo "<h2>Por favor, insira uma data de nascimento válida.</h2>";
+        }
+    ?>
 
 
 
